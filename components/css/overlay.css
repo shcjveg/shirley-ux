@@ -1,0 +1,72 @@
+/* shirley-ux · 浮层：弹窗、抽屉、气泡、提示、派活入口。 */
+
+.vx-dialog,
+.vx-drawer {
+  border-radius: var(--vx-radius-xl);
+  background: var(--vx-surface-overlay-strong);
+  box-shadow: 0 0 0 1px var(--vx-line-faint), var(--vx-shadow-overlay);
+}
+
+.vx-popup,
+.vx-menu,
+.vx-select-popup {
+  border-radius: var(--vx-radius-lg);
+  background: var(--vx-surface-overlay-strong);
+  box-shadow: 0 0 0 1px var(--vx-line-faint), var(--vx-shadow-overlay);
+}
+
+.vx-option {
+  border-radius: var(--vx-radius-sm);
+}
+
+.vx-toast {
+  border-radius: var(--vx-radius-md);
+  background: var(--vx-ink-base);
+  color: var(--vx-text-on-strong);
+  font-weight: var(--vx-font-weight-medium);
+  box-shadow: var(--vx-shadow-overlay);
+}
+
+.vx-selection-bar {
+  border-radius: var(--vx-radius-lg);
+  box-shadow: 0 0 0 1px var(--vx-line-faint), var(--vx-shadow-overlay);
+}
+
+.vx-ask {
+  border-radius: var(--vx-radius-full);
+  background: var(--vx-brand-accent);
+  color: var(--vx-text-on-accent);
+  font-size: var(--vx-font-size-md);
+  font-weight: var(--vx-font-weight-medium);
+  box-shadow: var(--vx-shadow-overlay);
+}
+
+.vx-ask:hover {
+  background: var(--vx-brand-accent-bright);
+  color: var(--vx-text-on-accent);
+}
+
+/* 导览卡：白卡、绿色进度，挖空描边用薄荷色 */
+.vx-guide-card {
+  background: var(--vx-surface-card);
+  border-radius: var(--vx-radius-xl);
+}
+
+.vx-guide-hole {
+  outline-color: var(--vx-brand-accent-bright);
+}
+
+.vx-guide-meta .vx-count {
+  color: var(--vx-brand-accent);
+  background: transparent;
+  padding: 0;
+  font-weight: var(--vx-font-weight-semibold);
+  letter-spacing: 0.1em;
+}
+
+.vx-dialog,
+.vx-drawer,
+.vx-popup,
+.vx-menu {
+  overscroll-behavior: contain;
+}

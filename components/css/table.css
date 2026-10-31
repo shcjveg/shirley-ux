@@ -1,0 +1,190 @@
+/* shirley-ux · 表格与筛选：表头收窄、行高放开、标题 15px；筛选条收进一张控制卡，控件是胶囊。 */
+
+.vx-table {
+  font-size: 13px;
+}
+
+.vx-table th {
+  height: 38px;
+  padding: 0 var(--vx-space-4);
+  text-transform: none;
+  border-radius: 0;
+  background: var(--vx-surface-card-hover);
+  box-shadow: inset 0 -1px 0 var(--vx-line-faint);
+  font-size: var(--vx-font-size-xs);
+  font-weight: var(--vx-font-weight-semibold);
+  letter-spacing: 0.06em;
+  color: var(--vx-text-tertiary);
+}
+
+.vx-table th[aria-sort] {
+  color: var(--vx-text-secondary);
+}
+
+.vx-table td {
+  height: 72px;
+  padding: var(--vx-space-3-5) var(--vx-space-4);
+  box-shadow: inset 0 -1px 0 var(--vx-line-faint);
+}
+
+.vx-table tbody tr:last-child td {
+  box-shadow: none;
+}
+
+.vx-table td.num,
+.vx-table td[data-align='right'] {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.vx-table tbody tr[data-clickable='true']:hover td {
+  background: var(--vx-fill-hover);
+}
+
+.vx-table tbody tr[data-selected] td,
+.vx-table tr[data-selected] td {
+  background: color-mix(in srgb, var(--vx-brand-accent-soft) 40%, transparent);
+}
+
+.vx-table tbody tr[data-selected] td:first-child,
+.vx-table tr[data-selected] td:first-child {
+  box-shadow: inset 2px 0 0 var(--vx-brand-accent), inset 0 -1px 0 var(--vx-line-faint);
+}
+
+.vx-table .vx-cell-title {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: var(--vx-font-weight-semibold);
+  letter-spacing: -0.005em;
+  line-height: 1.45;
+}
+
+.vx-table .vx-cell-title + * {
+  margin-top: var(--vx-space-1-5);
+}
+
+.vx-table td .vx-meta,
+.vx-table td small {
+  font-size: var(--vx-font-size-sm);
+  letter-spacing: 0.01em;
+}
+
+.vx-table-action {
+  text-decoration: none;
+  color: var(--vx-text-primary);
+}
+
+.vx-table-action:hover {
+  color: var(--vx-brand-accent);
+  text-decoration: underline;
+}
+
+/* 表头里的带说明文本：不画虚线，悬停才上色 */
+.vx-table .vx-tip-label {
+  text-decoration: none;
+  border-bottom: 1px dotted var(--vx-line-faint);
+  padding-bottom: 1px;
+}
+
+.vx-table th .vx-tip-label {
+  border-bottom: 0;
+  color: inherit;
+}
+
+.vx-table .vx-tip-label:hover,
+.vx-table .vx-tip-label[aria-expanded='true'] {
+  border-bottom-color: var(--vx-brand-accent);
+  color: var(--vx-brand-accent);
+}
+
+/* 直接铺在页面上的表格：与卡片同一套描边与圆角 */
+.vx-page > .vx-table-wrap,
+.vx-page > .vx-table-scroll {
+  background: var(--vx-surface-card);
+  border: 1px solid var(--vx-line-faint);
+  border-radius: var(--vx-radius-lg);
+  box-shadow: var(--vx-shadow-lift);
+  overflow: auto;
+}
+
+.vx-page > .vx-table-wrap > .vx-table,
+.vx-page > .vx-table-scroll > .vx-table {
+  border-radius: inherit;
+}
+
+.vx-table-toolbar {
+  margin-bottom: var(--vx-space-3);
+  font-size: var(--vx-font-size-sm);
+  color: var(--vx-text-tertiary);
+}
+
+/* 筛选条：一张控制卡，胶囊控件，已选条件是细标签 */
+.vx-filter-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vx-space-2);
+  padding: var(--vx-space-3) var(--vx-space-4);
+  margin-bottom: var(--vx-space-4);
+  border-radius: var(--vx-radius-lg);
+  background: var(--vx-surface-card);
+  border: 1px solid var(--vx-line-faint);
+  box-shadow: var(--vx-shadow-card);
+}
+
+.vx-filter-panel > .vx-filterbar + .vx-filterbar {
+  padding-top: var(--vx-space-2);
+  border-top: 1px solid var(--vx-line-faint);
+}
+
+.vx-filterbar {
+  gap: var(--vx-space-2);
+  align-items: center;
+  padding-bottom: 0;
+}
+
+.vx-filterbar .vx-select,
+.vx-filterbar .vx-input,
+.vx-filterbar .vx-trigger {
+  height: var(--vx-size-control-sm);
+  border-radius: var(--vx-radius-full);
+  border: 1px solid var(--vx-line-faint);
+  background: var(--vx-surface-card);
+  box-shadow: none;
+  font-size: var(--vx-font-size-sm);
+  color: var(--vx-text-secondary);
+  transition: border-color var(--vx-motion-duration-fast), box-shadow var(--vx-motion-duration-fast), color var(--vx-motion-duration-fast);
+}
+
+.vx-filterbar .vx-select:hover,
+.vx-filterbar .vx-input:hover,
+.vx-filterbar .vx-trigger:hover {
+  border-color: var(--vx-line-control);
+  color: var(--vx-text-primary);
+}
+
+.vx-filterbar .vx-select:focus-visible,
+.vx-filterbar .vx-input:focus-visible,
+.vx-filterbar .vx-trigger:focus-visible {
+  outline: none;
+  border-color: var(--vx-brand-accent);
+  box-shadow: 0 0 0 3px var(--vx-brand-accent-soft);
+}
+
+.vx-filterbar > .vx-search {
+  flex: 0 1 240px;
+  min-width: 180px;
+  border-radius: var(--vx-radius-full);
+}
+
+.vx-filterbar .vx-chip {
+  height: 24px;
+  border-radius: var(--vx-radius-full);
+  background: var(--vx-surface-card);
+  border: 1px solid var(--vx-line-faint);
+  font-size: var(--vx-font-size-xs);
+  color: var(--vx-text-secondary);
+}

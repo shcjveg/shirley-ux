@@ -1,0 +1,30 @@
+/* shirley-ux · 可读性、触摸与动效。 */
+
+:focus-visible {
+  outline: 2px solid var(--vx-focus-ring);
+  outline-offset: 2px;
+}
+
+button,
+a,
+label,
+.vx-btn,
+.vx-tab,
+.vx-icon-btn,
+.vx-check,
+.vx-radio,
+.vx-trigger,
+.vx-chip,
+.vx-tag {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

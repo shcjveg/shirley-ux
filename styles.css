@@ -1,0 +1,12 @@
+/* shirley-ux · 入口：在 vincent-ux/styles.css 与产品的 app.css 之后加载 */
+@import './tokens/dist/tokens.css';
+@import './components/css/typography.css';
+@import './components/css/shell.css';
+@import './components/css/card.css';
+@import './components/css/table.css';
+@import './components/css/controls.css';
+@import './components/css/tag.css';
+@import './components/css/list.css';
+@import './components/css/overlay.css';
+@import './components/css/empty.css';
+@import './components/css/motion.css';

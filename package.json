@@ -1,0 +1,14 @@
+{
+  "name": "shirley-ux",
+  "version": "0.1.0",
+  "private": true,
+  "description": "素略 UGC 的视觉皮肤层：压在 vincent-ux 之上，只换颜色、字号、圆角、投影与控件质感，不改结构、组件与交互",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-tokens.mjs",
+    "check": "node scripts/check.mjs",
+    "sync": "node scripts/sync.mjs"
+  },
+  "engines": { "node": ">=22.12.0" },
+  "license": "MIT"
+}

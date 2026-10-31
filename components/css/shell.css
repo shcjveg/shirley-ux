@@ -1,0 +1,88 @@
+/* shirley-ux · 外壳：顶部页签条 + 品牌标识。页签选中用一条绿色基线，不用白卡；
+   品牌标识只占一行：圆角方图标 + 两个字，不加分隔线、不加副标题。 */
+
+.vx-tabset--content > .vx-tabs-bar {
+  background: color-mix(in srgb, var(--vx-surface-shell) 86%, transparent);
+  -webkit-backdrop-filter: var(--vx-blur-overlay);
+  backdrop-filter: var(--vx-blur-overlay);
+  box-shadow: inset 0 -1px 0 var(--vx-line-faint);
+}
+
+.vx-tabset--content > .vx-tabs-bar .vx-tabs.vx-seg {
+  min-height: 48px;
+  gap: var(--vx-space-1);
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.vx-tabset--content > .vx-tabs-bar .vx-tab-item {
+  border-radius: var(--vx-radius-sm);
+}
+
+.vx-tabset--content > .vx-tabs-bar .vx-tab-item[data-active='true'] {
+  background: transparent;
+  box-shadow: none;
+}
+
+.vx-tabset--content > .vx-tabs-bar .vx-tab-item[data-active='true']::after {
+  content: '';
+  position: absolute;
+  left: var(--vx-space-2);
+  right: var(--vx-space-2);
+  bottom: -1px;
+  height: 2px;
+  border-radius: 2px 2px 0 0;
+  background: var(--vx-brand-accent);
+}
+
+.vx-tabset--content > .vx-tabs-bar .vx-tabs.vx-seg > .vx-tab-item > .vx-tab {
+  height: 40px;
+  border-radius: var(--vx-radius-sm);
+  padding-inline: var(--vx-space-3);
+}
+
+.vx-tabset--content > .vx-tabs-bar .vx-tab-item[data-active='true'] .vx-tab-label {
+  font-weight: var(--vx-font-weight-semibold);
+  color: var(--vx-text-primary);
+}
+
+.vx-tabset--content > .vx-tabs-bar .vx-tab-link {
+  height: 40px;
+}
+
+/* 品牌标识：与页签同高同行；窄屏只留图标 */
+.vx-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vx-space-2);
+  height: 40px;
+  padding-right: var(--vx-space-4);
+  font-size: var(--vx-font-size-md);
+  font-weight: var(--vx-font-weight-semibold);
+  letter-spacing: 0.02em;
+  color: var(--vx-text-primary);
+  white-space: nowrap;
+}
+
+.vx-brand-mark > img,
+.vx-brand-mark > svg {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--vx-radius-xs);
+  flex-shrink: 0;
+}
+
+@media (max-width: 760px) {
+  .vx-brand-mark > span {
+    display: none;
+  }
+
+  .vx-brand-mark {
+    padding-right: var(--vx-space-2);
+  }
+
+  .vx-tabset--content > .vx-tabs-bar .vx-tabs.vx-seg {
+    min-height: 44px;
+  }
+}

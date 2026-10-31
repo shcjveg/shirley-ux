@@ -1,0 +1,48 @@
+/* shirley-ux · 卡片：一像素描边 + 极轻投影，结构靠线不靠影。 */
+
+.vx-card,
+.vx-stat,
+.vx-portal-tile,
+.vx-portal-hero {
+  border-radius: var(--vx-radius-lg);
+  background: var(--vx-surface-card);
+  border: 1px solid var(--vx-line-faint);
+  box-shadow: var(--vx-shadow-lift);
+}
+
+.vx-card--padded {
+  padding: var(--vx-space-6);
+}
+
+.vx-card-head {
+  padding: var(--vx-space-6) var(--vx-space-6) var(--vx-space-1);
+}
+
+.vx-card-body {
+  padding: var(--vx-space-3) var(--vx-space-6) var(--vx-space-6);
+}
+
+.vx-card-body:first-child,
+.vx-card-body--standalone {
+  padding-top: var(--vx-space-6);
+}
+
+button.vx-stat:hover {
+  background: var(--vx-surface-card-hover);
+  border-color: var(--vx-line-control);
+}
+
+.vx-stat {
+  padding: var(--vx-space-4) var(--vx-space-6);
+}
+
+.vx-stat-label {
+  font-size: var(--vx-font-size-sm);
+  font-weight: var(--vx-font-weight-medium);
+  color: var(--vx-text-secondary);
+}
+
+.vx-stat-value {
+  font-size: var(--vx-font-size-3xl);
+  letter-spacing: -0.02em;
+}

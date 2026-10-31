@@ -1,0 +1,159 @@
+/* shirley-ux · 控件：白底描边按钮、绿色主按钮、描边输入框、分段与筛选片。 */
+
+.vx-btn {
+  border: 1px solid var(--vx-line-faint);
+  border-radius: var(--vx-radius-md);
+  background: var(--vx-surface-card);
+  font-weight: var(--vx-font-weight-medium);
+  letter-spacing: 0;
+  transition: background var(--vx-motion-duration-fast) var(--vx-motion-ease-standard),
+    box-shadow var(--vx-motion-duration-fast) var(--vx-motion-ease-standard),
+    transform var(--vx-motion-duration-fast) var(--vx-motion-ease-standard);
+}
+
+.vx-btn:hover {
+  background: var(--vx-surface-card-hover);
+  box-shadow: 0 0 0 1px var(--vx-line-control);
+}
+
+.vx-btn:active {
+  transform: translateY(1px);
+}
+
+.vx-btn--primary {
+  border-color: transparent;
+  background: var(--vx-brand-accent);
+  color: var(--vx-text-on-accent);
+  box-shadow: var(--vx-shadow-card);
+}
+
+.vx-btn--primary:hover {
+  background: var(--vx-brand-accent-bright);
+  color: var(--vx-text-on-accent);
+  box-shadow: 0 2px 8px -2px color-mix(in srgb, var(--vx-brand-accent) 40%, transparent);
+}
+
+.vx-btn:not(.vx-btn--primary):not(.vx-btn--ghost):not(.vx-btn--danger) {
+  color: var(--vx-text-secondary);
+}
+
+.vx-btn:not(.vx-btn--primary):not(.vx-btn--ghost):not(.vx-btn--danger):hover {
+  color: var(--vx-text-primary);
+}
+
+.vx-btn--ghost {
+  border-color: transparent;
+  background: transparent;
+  color: var(--vx-text-secondary);
+}
+
+.vx-btn--ghost:hover {
+  background: var(--vx-fill-hover);
+  box-shadow: none;
+  color: var(--vx-text-primary);
+}
+
+.vx-btn--sm {
+  min-height: var(--vx-size-control-sm);
+  padding: var(--vx-space-1) var(--vx-space-3);
+  font-size: var(--vx-font-size-sm);
+}
+
+.vx-btn--lg {
+  border-radius: var(--vx-radius-md);
+  padding: var(--vx-space-2) var(--vx-space-6);
+}
+
+.vx-nested .vx-btn:not(.vx-btn--primary):not(.vx-btn--ghost) {
+  background: var(--vx-surface-card);
+}
+
+.vx-icon-btn {
+  border-radius: var(--vx-radius-md);
+}
+
+.vx-icon-btn:hover {
+  background: var(--vx-fill-hover);
+}
+
+.vx-input,
+.vx-textarea,
+.vx-select,
+.vx-search,
+.vx-trigger {
+  border: 1px solid var(--vx-line-control);
+  border-radius: var(--vx-radius-md);
+  background: var(--vx-surface-card);
+  box-shadow: none;
+  color: var(--vx-text-primary);
+}
+
+.vx-input:hover,
+.vx-textarea:hover,
+.vx-select:hover,
+.vx-search:hover,
+.vx-trigger:hover {
+  border-color: color-mix(in srgb, var(--vx-line-control) 60%, var(--vx-text-secondary));
+  background: var(--vx-surface-card);
+}
+
+.vx-input:focus-visible,
+.vx-textarea:focus-visible,
+.vx-select:focus-visible,
+.vx-search:has(input:focus-visible) {
+  outline: 2px solid var(--vx-focus-ring);
+  outline-offset: -1px;
+}
+
+.vx-search > svg {
+  color: var(--vx-text-tertiary);
+}
+
+.vx-seg {
+  border-radius: var(--vx-radius-md);
+  background: var(--vx-surface-inset);
+  box-shadow: inset 0 0 0 1px var(--vx-line-faint);
+  padding: var(--vx-space-1);
+}
+
+.vx-seg > button {
+  border-radius: var(--vx-radius-sm);
+  font-size: var(--vx-font-size-sm);
+}
+
+.vx-seg > button[aria-pressed='true'],
+.vx-seg > button[aria-selected='true'] {
+  background: var(--vx-surface-card);
+  color: var(--vx-text-primary);
+  box-shadow: var(--vx-shadow-card);
+}
+
+.vx-chip {
+  border-radius: var(--vx-radius-full);
+  background: var(--vx-surface-card);
+  box-shadow: inset 0 0 0 1px var(--vx-line-faint);
+  font-size: var(--vx-font-size-sm);
+  color: var(--vx-text-secondary);
+  padding-right: var(--vx-space-2);
+}
+
+.vx-chip button {
+  border-radius: var(--vx-radius-full);
+}
+
+/* 勾选与开关跟随强调色：系统里只有一个「选中」的颜色 */
+.vx-check:checked,
+.vx-check:indeterminate {
+  border-color: var(--vx-brand-accent);
+  background: var(--vx-brand-accent);
+}
+
+.vx-radio:checked {
+  border-color: var(--vx-brand-accent);
+}
+
+.vx-switch[aria-checked='true']::before,
+.vx-switch-input:checked + .vx-switch::before {
+  border-color: var(--vx-brand-accent);
+  background: var(--vx-brand-accent);
+}

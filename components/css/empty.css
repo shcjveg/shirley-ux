@@ -1,0 +1,38 @@
+/* shirley-ux · 空态与骨架：一张安静的虚线卡面，而不是两行干字。 */
+
+.vx-empty-state {
+  gap: var(--vx-space-3);
+  padding: var(--vx-space-12) var(--vx-space-6);
+  border-radius: var(--vx-radius-xl);
+  background: var(--vx-surface-card);
+  border: 1px dashed var(--vx-line-control);
+  color: var(--vx-text-secondary);
+}
+
+.vx-empty-state--section {
+  align-items: center;
+  text-align: center;
+}
+
+.vx-empty-state-message {
+  font-size: var(--vx-font-size-lg);
+  font-weight: var(--vx-font-weight-semibold);
+  color: var(--vx-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.vx-empty-state-description {
+  max-width: 420px;
+  margin-top: var(--vx-space-2);
+  font-size: var(--vx-font-size-sm);
+  line-height: 1.7;
+  color: var(--vx-text-tertiary);
+}
+
+.vx-empty-state-icon {
+  color: var(--vx-brand-accent);
+}
+
+.vx-skeleton {
+  border-radius: var(--vx-radius-sm);
+}

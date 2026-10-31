@@ -1,0 +1,50 @@
+/* shirley-ux · 标签与状态：一律浅底胶囊，中性状态不抢标题；三档语气 accent / warning / critical。 */
+
+.vx-tag {
+  height: 22px;
+  padding: 0 var(--vx-space-2);
+  border-radius: var(--vx-radius-full);
+  border: 1px solid transparent;
+  background: var(--vx-surface-inset);
+  color: var(--vx-text-secondary);
+  font-size: var(--vx-font-size-xs);
+  font-weight: var(--vx-font-weight-medium);
+  letter-spacing: 0.01em;
+}
+
+.vx-tag--accent {
+  background: var(--vx-brand-accent-soft);
+  color: var(--vx-brand-accent);
+}
+
+.vx-tag--warning {
+  background: var(--vx-brand-warning-soft);
+  color: var(--vx-brand-warning);
+}
+
+.vx-tag--critical {
+  background: var(--vx-brand-critical-soft);
+  color: var(--vx-brand-critical);
+}
+
+.vx-by {
+  min-width: 0;
+  padding: var(--vx-space-1) var(--vx-space-2);
+  border-radius: var(--vx-radius-full);
+  background: var(--vx-fill-quiet);
+  font-size: var(--vx-font-size-xs);
+  color: var(--vx-text-tertiary);
+}
+
+.vx-badge {
+  min-width: 18px;
+  height: 18px;
+  line-height: 18px;
+  border-radius: var(--vx-radius-full);
+  font-size: var(--vx-font-size-xs);
+}
+
+.vx-dot {
+  width: 6px;
+  height: 6px;
+}

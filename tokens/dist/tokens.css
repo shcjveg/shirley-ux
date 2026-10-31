@@ -1,0 +1,89 @@
+/* shirley-ux v0.1.0 · tokens/dist/tokens.css（覆盖 vincent-ux 同名变量，在 vincent-ux 之后加载） */
+
+:root {
+  --vx-font-size-xs: 11px;
+  --vx-font-size-sm: 12px;
+  --vx-font-size-md: 14px;
+  --vx-font-size-lg: 16px;
+  --vx-font-size-xl: 18px;
+  --vx-font-size-2xl: 24px;
+  --vx-font-size-3xl: 30px;
+  --vx-font-size-display: 40px;
+  --vx-font-leading-tight: 1.25;
+  --vx-font-leading-normal: 1.6;
+  --vx-font-leading-relaxed: 1.75;
+  --vx-font-family-serif: "Songti SC", "Source Han Serif SC", "Noto Serif SC", Georgia, serif;
+  --vx-radius-xs: 6px;
+  --vx-radius-sm: 6px;
+  --vx-radius-md: 12px;
+  --vx-radius-lg: 12px;
+  --vx-radius-xl: 16px;
+  --vx-radius-full: 999px;
+  --vx-size-control-sm: 32px;
+  --vx-size-control-md: 36px;
+  --vx-size-control-lg: 44px;
+  --vx-surface-canvas: light-dark(#f3f1ec, #0c1014);
+  --vx-surface-shell: light-dark(#f7f5f1, #12171c);
+  --vx-surface-card: light-dark(#ffffff, #191f26);
+  --vx-surface-card-hover: light-dark(#faf8f4, #1f262e);
+  --vx-surface-inset: light-dark(#f4f2ee, #202730);
+  --vx-surface-overlay: light-dark(rgba(255, 255, 255, 0.86), rgba(25, 31, 38, 0.88));
+  --vx-surface-overlay-strong: light-dark(rgba(255, 255, 255, 0.95), rgba(25, 31, 38, 0.96));
+  --vx-surface-scrim: light-dark(rgba(16, 20, 24, 0.4), rgba(0, 0, 0, 0.58));
+  --vx-fill-hover: light-dark(rgba(20, 22, 26, 0.045), rgba(255, 255, 255, 0.05));
+  --vx-fill-selected: light-dark(rgba(20, 22, 26, 0.075), rgba(255, 255, 255, 0.09));
+  --vx-fill-quiet: light-dark(rgba(20, 22, 26, 0.035), rgba(255, 255, 255, 0.03));
+  --vx-text-primary: light-dark(#14161a, #e8edf3);
+  --vx-text-secondary: light-dark(#4d5464, #a5afbd);
+  --vx-text-tertiary: light-dark(#636977, #8f99a6);
+  --vx-text-disabled: light-dark(#a9aeb9, #4c5561);
+  --vx-text-muted: light-dark(#616675, #8c96a4);
+  --vx-text-on-strong: light-dark(#ffffff, #10161c);
+  --vx-text-on-critical: light-dark(#ffffff, #10161c);
+  --vx-text-on-accent: light-dark(#ffffff, #07130e);
+  --vx-line-faint: light-dark(rgba(20, 22, 26, 0.09), rgba(255, 255, 255, 0.08));
+  --vx-line-control: light-dark(#80889a, #6f7987);
+  --vx-ink-base: light-dark(#101418, #e8edf3);
+  --vx-ink-top: light-dark(#262e38, #ffffff);
+  --vx-focus-ring: light-dark(#1f6b4f, #4fb98c);
+  --vx-brand-accent: light-dark(#1f6b4f, #4fb98c);
+  --vx-brand-accent-bright: light-dark(#2e8c68, #6ad3a6);
+  --vx-brand-accent-soft: light-dark(#e7f0ea, rgba(79, 185, 140, 0.14));
+  --vx-brand-warning: light-dark(#8a5a0a, #e8b45a);
+  --vx-brand-warning-soft: light-dark(#fbf3e3, rgba(232, 180, 90, 0.14));
+  --vx-brand-critical: light-dark(#b4342a, #f0796a);
+  --vx-brand-critical-soft: light-dark(#fbefed, rgba(240, 121, 106, 0.14));
+  --vx-data-positive: light-dark(#1c7a52, #4fb98c);
+  --vx-data-negative: light-dark(#b4342a, #f0796a);
+  --vx-viz-neutral: light-dark(rgba(16, 20, 24, 0.1), rgba(255, 255, 255, 0.12));
+  --vx-viz-accent: light-dark(#2a8763, #4fb98c);
+  --vx-viz-series-1: light-dark(#1c6b50, #4fb98c);
+  --vx-viz-series-2: light-dark(#4e5765, #a5afbd);
+  --vx-viz-series-3: light-dark(#2a8763, #6ad3a6);
+  --vx-viz-series-4: light-dark(#8a94a3, #78828f);
+  --vx-viz-series-5: light-dark(#14503c, #2a8763);
+  --vx-viz-series-6: light-dark(#c2c9d3, #39424d);
+  --vx-shadow-card: 0 1px 2px rgba(16, 20, 24, 0.04), 0 2px 8px -4px rgba(16, 20, 24, 0.06);
+  --vx-shadow-overlay: 0 8px 24px -12px rgba(16, 20, 24, 0.18), 0 32px 64px -32px rgba(16, 20, 24, 0.24);
+  --vx-shadow-inset: inset 0 1px 1px rgba(16, 20, 24, 0.03);
+  --vx-shadow-lift: 0 1px 2px rgba(20, 22, 26, 0.04), 0 20px 40px -34px rgba(20, 22, 26, 0.45);
+  --vx-blur-overlay: blur(24px) saturate(180%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --vx-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --vx-shadow-overlay: 0 8px 24px -12px rgba(0, 0, 0, 0.6), 0 32px 64px -32px rgba(0, 0, 0, 0.7);
+    --vx-shadow-inset: inset 0 1px 1px rgba(0, 0, 0, 0.28);
+    --vx-shadow-lift: 0 1px 2px rgba(0, 0, 0, 0.4), 0 20px 40px -30px rgba(0, 0, 0, 0.7);
+    --vx-blur-overlay: blur(24px) saturate(150%);
+  }
+}
+
+:root[data-theme='dark'] {
+  --vx-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --vx-shadow-overlay: 0 8px 24px -12px rgba(0, 0, 0, 0.6), 0 32px 64px -32px rgba(0, 0, 0, 0.7);
+  --vx-shadow-inset: inset 0 1px 1px rgba(0, 0, 0, 0.28);
+  --vx-shadow-lift: 0 1px 2px rgba(0, 0, 0, 0.4), 0 20px 40px -30px rgba(0, 0, 0, 0.7);
+  --vx-blur-overlay: blur(24px) saturate(150%);
+}

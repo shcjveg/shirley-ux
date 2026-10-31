@@ -1,0 +1,88 @@
+/* shirley-ux · 文字层级：正文 14px，标题用宋体，数字等宽。只改观感，不改结构。 */
+
+body {
+  background: var(--vx-surface-shell);
+  font-size: var(--vx-font-size-md);
+  color: var(--vx-text-primary);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--vx-brand-accent-soft);
+  color: var(--vx-text-primary);
+}
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--vx-brand-accent-bright);
+}
+
+.vx-title {
+  font-size: var(--vx-font-size-lg);
+  font-weight: var(--vx-font-weight-semibold);
+  letter-spacing: -0.01em;
+}
+
+.vx-meta {
+  font-size: var(--vx-font-size-sm);
+  color: var(--vx-text-tertiary);
+}
+
+.vx-num,
+.vx-money,
+.vx-count,
+.vx-stat-value {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+}
+
+/* 页头：宋体大标题 + 一句说明；编辑级留白 */
+.vx-pagehead {
+  margin-bottom: var(--vx-space-5);
+  gap: var(--vx-space-4);
+}
+
+.vx-pagehead h1,
+.vx-pagehead h2 {
+  font-family: var(--vx-font-family-serif);
+  font-size: var(--vx-font-size-3xl);
+  font-weight: var(--vx-font-weight-semibold);
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.vx-pagehead p {
+  margin-top: var(--vx-space-2);
+  font-size: var(--vx-font-size-sm);
+  color: var(--vx-text-tertiary);
+  letter-spacing: 0.01em;
+}
+
+/* 页头动作：主动作一个绿色实心，其余白底次按钮，都是中号 */
+.vx-pagehead-actions .vx-btn {
+  min-height: var(--vx-size-control-md);
+}
+
+.vx-card-head h3 {
+  font-size: var(--vx-font-size-lg);
+  font-weight: var(--vx-font-weight-semibold);
+  letter-spacing: -0.01em;
+}
+
+.vx-section-title {
+  font-size: var(--vx-font-size-md);
+  font-weight: var(--vx-font-weight-semibold);
+  letter-spacing: 0;
+  color: var(--vx-text-primary);
+}
+
+.vx-card-head h3,
+.vx-fold-summary {
+  text-wrap: balance;
+}

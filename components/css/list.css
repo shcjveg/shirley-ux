@@ -1,0 +1,49 @@
+/* shirley-ux · 列表行、折叠、待办。 */
+
+.vx-row {
+  padding: var(--vx-space-3) var(--vx-space-3);
+  border-radius: var(--vx-radius-md);
+}
+
+.vx-rows--ruled > .vx-row + .vx-row {
+  box-shadow: inset 0 1px 0 var(--vx-line-faint);
+}
+
+.vx-row:is(button, [role='button']):hover {
+  background: var(--vx-fill-hover);
+}
+
+.vx-fold-head {
+  min-height: 44px;
+  border-radius: var(--vx-radius-md);
+}
+
+.vx-fold-head .vx-fold-summary {
+  font-size: var(--vx-font-size-md);
+  letter-spacing: -0.005em;
+}
+
+.vx-todo {
+  border-radius: var(--vx-radius-md);
+}
+
+.vx-todo:hover {
+  background: var(--vx-fill-hover);
+}
+
+.vx-callout {
+  padding: var(--vx-space-3) var(--vx-space-4);
+  border-radius: var(--vx-radius-md);
+  background: var(--vx-fill-quiet);
+  box-shadow: inset 2px 0 0 var(--vx-line-control);
+}
+
+.vx-callout--accent {
+  background: var(--vx-brand-accent-soft);
+  box-shadow: inset 2px 0 0 var(--vx-brand-accent);
+}
+
+.vx-callout--critical {
+  background: var(--vx-brand-critical-soft);
+  box-shadow: inset 2px 0 0 var(--vx-brand-critical);
+}
