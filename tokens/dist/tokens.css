@@ -63,6 +63,18 @@
   --vx-viz-series-4: light-dark(#8a94a3, #78828f);
   --vx-viz-series-5: light-dark(#14503c, #2a8763);
   --vx-viz-series-6: light-dark(#c2c9d3, #39424d);
+  --vx-nav-top: light-dark(#13211c, #0f1b17);
+  --vx-nav-bottom: light-dark(#0d1815, #0a1512);
+  --vx-nav-glow: light-dark(rgba(70, 140, 110, 0.26), rgba(70, 140, 110, 0.22));
+  --vx-nav-text-strong: light-dark(#ffffff, #ffffff);
+  --vx-nav-text: light-dark(#c6d6cf, #c6d6cf);
+  --vx-nav-text-muted: light-dark(#8fa39a, #8fa39a);
+  --vx-nav-line: light-dark(rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.10));
+  --vx-nav-fill-hover: light-dark(rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.055));
+  --vx-nav-fill-selected: light-dark(rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12));
+  --vx-nav-active-fill: light-dark(rgba(111, 217, 172, 0.16), rgba(111, 217, 172, 0.16));
+  --vx-nav-active-line: light-dark(rgba(111, 217, 172, 0.20), rgba(111, 217, 172, 0.20));
+  --vx-nav-accent: light-dark(#8ce8bf, #8ce8bf);
   --vx-shadow-card: 0 1px 2px rgba(16, 20, 24, 0.04), 0 2px 8px -4px rgba(16, 20, 24, 0.06);
   --vx-shadow-overlay: 0 8px 24px -12px rgba(16, 20, 24, 0.18), 0 32px 64px -32px rgba(16, 20, 24, 0.24);
   --vx-shadow-inset: inset 0 1px 1px rgba(16, 20, 24, 0.03);

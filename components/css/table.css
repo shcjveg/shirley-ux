@@ -83,24 +83,6 @@
   text-decoration: underline;
 }
 
-/* 表头里的带说明文本：不画虚线，悬停才上色 */
-.vx-table .vx-tip-label {
-  text-decoration: none;
-  border-bottom: 1px dotted var(--vx-line-faint);
-  padding-bottom: 1px;
-}
-
-.vx-table th .vx-tip-label {
-  border-bottom: 0;
-  color: inherit;
-}
-
-.vx-table .vx-tip-label:hover,
-.vx-table .vx-tip-label[aria-expanded='true'] {
-  border-bottom-color: var(--vx-brand-accent);
-  color: var(--vx-brand-accent);
-}
-
 /* 直接铺在页面上的表格：与卡片同一套描边与圆角 */
 .vx-page > .vx-table-wrap,
 .vx-page > .vx-table-scroll {
@@ -146,10 +128,15 @@
   padding-bottom: 0;
 }
 
+/* 筛选条里的控件同一层级：都是 36px 高的胶囊、同一道极细描边、同一白底 */
 .vx-filterbar .vx-select,
 .vx-filterbar .vx-input,
-.vx-filterbar .vx-trigger {
-  height: var(--vx-size-control-sm);
+.vx-filterbar .vx-trigger,
+.vx-filterbar .vx-search,
+.vx-filterbar-side .vx-search,
+.vx-filterbar .vx-date-trigger {
+  min-height: var(--vx-size-control-md);
+  height: var(--vx-size-control-md);
   border-radius: var(--vx-radius-full);
   border: 1px solid var(--vx-line-faint);
   background: var(--vx-surface-card);
@@ -159,25 +146,40 @@
   transition: border-color var(--vx-motion-duration-fast), box-shadow var(--vx-motion-duration-fast), color var(--vx-motion-duration-fast);
 }
 
+.vx-filterbar .vx-date-trigger {
+  padding-inline: var(--vx-space-3);
+}
+
 .vx-filterbar .vx-select:hover,
 .vx-filterbar .vx-input:hover,
-.vx-filterbar .vx-trigger:hover {
+.vx-filterbar .vx-trigger:hover,
+.vx-filterbar .vx-search:hover,
+.vx-filterbar-side .vx-search:hover,
+.vx-filterbar .vx-date-trigger:hover {
   border-color: var(--vx-line-control);
+  background: var(--vx-surface-card);
   color: var(--vx-text-primary);
 }
 
 .vx-filterbar .vx-select:focus-visible,
 .vx-filterbar .vx-input:focus-visible,
-.vx-filterbar .vx-trigger:focus-visible {
+.vx-filterbar .vx-trigger:focus-visible,
+.vx-filterbar .vx-search:has(input:focus-visible),
+.vx-filterbar-side .vx-search:has(input:focus-visible),
+.vx-filterbar .vx-date-trigger:focus-visible {
   outline: none;
   border-color: var(--vx-brand-accent);
   box-shadow: 0 0 0 3px var(--vx-brand-accent-soft);
 }
 
-.vx-filterbar > .vx-search {
-  flex: 0 1 240px;
-  min-width: 180px;
-  border-radius: var(--vx-radius-full);
+/* 搜索在右侧一列（FilterBar 的 side），下面跟「清除筛选」；清除按钮和搜索框同一右边线 */
+.vx-filterbar-side .vx-search {
+  width: 240px;
+}
+
+.vx-filterbar-side .vx-btn--ghost {
+  min-height: var(--vx-size-control-sm);
+  padding-inline: var(--vx-space-2);
 }
 
 .vx-filterbar .vx-chip {

@@ -1,88 +1,155 @@
 /* shirley-ux · 外壳：顶部页签条 + 品牌标识。页签选中用一条绿色基线，不用白卡；
    品牌标识只占一行：圆角方图标 + 两个字，不加分隔线、不加副标题。 */
 
-.vx-tabset--content > .vx-tabs-bar {
-  background: color-mix(in srgb, var(--vx-surface-shell) 86%, transparent);
-  -webkit-backdrop-filter: var(--vx-blur-overlay);
-  backdrop-filter: var(--vx-blur-overlay);
-  box-shadow: inset 0 -1px 0 var(--vx-line-faint);
+/* 顶部导航：V3 侧栏那套深绿黑渐变 + 左上一团绿光，页签、品牌标识、外开入口和头像都在它上面反白。
+   只给应用外壳最外层的页签条（main 直接子级）；页内的二级页签不用这套，保持极简。
+   条内的文字、线、填充变量在这里局部改写（深色面上的那一套），不影响正文区。 */
+main > .vx-tabset--content > .vx-tabs-bar {
+  --vx-text-primary: var(--vx-nav-text-strong);
+  --vx-text-secondary: var(--vx-nav-text);
+  --vx-text-tertiary: var(--vx-nav-text-muted);
+  --vx-text-muted: var(--vx-nav-text-muted);
+  --vx-line-faint: var(--vx-nav-line);
+  --vx-fill-hover: var(--vx-nav-fill-hover);
+  --vx-fill-selected: var(--vx-nav-fill-selected);
+  --vx-surface-card: var(--vx-nav-fill-selected);
+  --vx-shadow-card: none;
+  background:
+    radial-gradient(120% 160% at 8% 0%, var(--vx-nav-glow), transparent 62%),
+    linear-gradient(180deg, var(--vx-nav-top) 0%, var(--vx-nav-bottom) 100%);
+  box-shadow: inset 0 -1px 0 var(--vx-nav-line);
+  color: var(--vx-nav-text);
 }
 
-.vx-tabset--content > .vx-tabs-bar .vx-tabs.vx-seg {
+/* 页签条本身不是分段控件：没有圆角、没有描边；左右留出一点内边距，选中块不会贴着滚动裁切边 */
+main > .vx-tabset--content > .vx-tabs-bar .vx-tabs.vx-seg {
+  height: auto;
   min-height: 48px;
   gap: var(--vx-space-1);
-  padding: 0;
+  padding: 0 var(--vx-space-2);
+  margin-inline: calc(-1 * var(--vx-space-2));
+  border: 0;
+  border-radius: 0;
   background: transparent;
   box-shadow: none;
 }
 
-.vx-tabset--content > .vx-tabs-bar .vx-tab-item {
+/* 页签：选中是一块淡薄荷底 + 极细薄荷描边（V3 的选中态），不画下划线；悬停只上一档填充 */
+main > .vx-tabset--content > .vx-tabs-bar .vx-tab-item {
   border-radius: var(--vx-radius-sm);
+  transition: background var(--vx-motion-duration-fast), box-shadow var(--vx-motion-duration-fast);
 }
 
-.vx-tabset--content > .vx-tabs-bar .vx-tab-item[data-active='true'] {
-  background: transparent;
+main > .vx-tabset--content > .vx-tabs-bar .vx-tab-item[data-hovered='true'],
+main > .vx-tabset--content > .vx-tabs-bar .vx-tab-item[data-focused='true']:not([data-active='true']) {
+  background: var(--vx-nav-fill-hover);
   box-shadow: none;
 }
 
-.vx-tabset--content > .vx-tabs-bar .vx-tab-item[data-active='true']::after {
-  content: '';
-  position: absolute;
-  left: var(--vx-space-2);
-  right: var(--vx-space-2);
-  bottom: -1px;
-  height: 2px;
-  border-radius: 2px 2px 0 0;
-  background: var(--vx-brand-accent);
+main > .vx-tabset--content > .vx-tabs-bar .vx-tab-item[data-active='true'] {
+  background: var(--vx-nav-active-fill);
+  box-shadow: inset 0 0 0 1px var(--vx-nav-active-line);
 }
 
-.vx-tabset--content > .vx-tabs-bar .vx-tabs.vx-seg > .vx-tab-item > .vx-tab {
+/* 待办红点挂在文字左上角：左右各留 20px、红点再往下一点，让它落在选中块内部，不压在圆角上 */
+main > .vx-tabset--content > .vx-tabs-bar .vx-tab-indicator {
+  left: calc(-1 * var(--vx-space-2));
+  top: var(--vx-space-1);
+}
+
+main > .vx-tabset--content > .vx-tabs-bar .vx-tabs.vx-seg > .vx-tab-item > .vx-tab {
   height: 40px;
-  border-radius: var(--vx-radius-sm);
-  padding-inline: var(--vx-space-3);
+  border-radius: inherit;
+  padding-inline: var(--vx-space-5);
+  color: var(--vx-nav-text);
 }
 
-.vx-tabset--content > .vx-tabs-bar .vx-tab-item[data-active='true'] .vx-tab-label {
+main > .vx-tabset--content > .vx-tabs-bar .vx-tab-item[data-hovered='true'] .vx-tab-label {
+  color: var(--vx-nav-text-strong);
+}
+
+main > .vx-tabset--content > .vx-tabs-bar .vx-tab-item[data-active='true'] .vx-tab-label {
   font-weight: var(--vx-font-weight-semibold);
-  color: var(--vx-text-primary);
+  color: var(--vx-nav-text-strong);
 }
 
-.vx-tabset--content > .vx-tabs-bar .vx-tab-link {
+main > .vx-tabset--content > .vx-tabs-bar .vx-tab-link {
   height: 40px;
+  color: var(--vx-nav-text);
 }
 
-/* 品牌标识：与页签同高同行；窄屏只留图标 */
+main > .vx-tabset--content > .vx-tabs-bar .vx-tab-link:hover {
+  background: var(--vx-nav-fill-hover);
+  color: var(--vx-nav-text-strong);
+}
+
+main > .vx-tabset--content > .vx-tabs-bar .vx-tab-link > svg {
+  color: var(--vx-nav-text-muted);
+}
+
+main > .vx-tabset--content > .vx-tabs-bar .vx-user-trigger .vx-avatar {
+  background: var(--vx-nav-fill-selected);
+  color: var(--vx-nav-text-strong);
+  box-shadow: inset 0 0 0 1px var(--vx-nav-line);
+}
+
+/* 品牌标识：与页签同高同行；图标有一层顶部高光、一圈亮边和一道绿色投影，字用宋体。窄屏只留图标 */
 .vx-brand-mark {
   display: inline-flex;
   align-items: center;
-  gap: var(--vx-space-2);
+  gap: var(--vx-space-2-5);
   height: 40px;
   padding-right: var(--vx-space-4);
-  font-size: var(--vx-font-size-md);
+  font-family: var(--vx-font-family-serif);
+  font-size: var(--vx-font-size-lg);
   font-weight: var(--vx-font-weight-semibold);
-  letter-spacing: 0.02em;
-  color: var(--vx-text-primary);
+  letter-spacing: 0.06em;
+  color: var(--vx-nav-text-strong);
   white-space: nowrap;
 }
 
-.vx-brand-mark > img,
-.vx-brand-mark > svg {
-  width: 20px;
-  height: 20px;
-  border-radius: var(--vx-radius-xs);
+.vx-brand-logo {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  box-shadow:
+    0 1px 1px color-mix(in srgb, var(--vx-ink-base) 14%, transparent),
+    0 6px 14px -6px color-mix(in srgb, var(--vx-brand-accent) 60%, transparent);
+}
+
+.vx-brand-logo > img,
+.vx-brand-logo > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.vx-brand-logo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--vx-brand-accent-bright) 55%, transparent), transparent 55%);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--vx-brand-accent-bright) 45%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--vx-brand-accent-bright) 70%, transparent);
+  pointer-events: none;
+}
+
+/* 品牌标识始终靠左完整显示，不随窄屏收起；页签条不够宽时由页签区自己滚动 */
+.vx-brand-mark {
   flex-shrink: 0;
 }
 
 @media (max-width: 760px) {
-  .vx-brand-mark > span {
-    display: none;
-  }
-
   .vx-brand-mark {
     padding-right: var(--vx-space-2);
   }
 
-  .vx-tabset--content > .vx-tabs-bar .vx-tabs.vx-seg {
+  main > .vx-tabset--content > .vx-tabs-bar .vx-tabs.vx-seg {
     min-height: 44px;
   }
 }

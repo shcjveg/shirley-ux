@@ -46,3 +46,8 @@ button.vx-stat:hover {
   font-size: var(--vx-font-size-3xl);
   letter-spacing: -0.02em;
 }
+
+/* 板块标题行里的控件靠右，和页头动作同一规则 */
+.vx-section-controls {
+  margin-left: auto;
+}

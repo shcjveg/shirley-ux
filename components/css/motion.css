@@ -1,9 +1,4 @@
-/* shirley-ux · 可读性、触摸与动效。 */
-
-:focus-visible {
-  outline: 2px solid var(--vx-focus-ring);
-  outline-offset: 2px;
-}
+/* shirley-ux · 触摸与动效。焦点环沿用 vincent-ux（组件各自定义位置），这里不覆盖。 */
 
 button,
 a,

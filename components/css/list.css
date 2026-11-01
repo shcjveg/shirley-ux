@@ -31,19 +31,20 @@
   background: var(--vx-fill-hover);
 }
 
+/* 提示条：只靠底色区分语气，不加左边色线 */
 .vx-callout {
   padding: var(--vx-space-3) var(--vx-space-4);
   border-radius: var(--vx-radius-md);
   background: var(--vx-fill-quiet);
-  box-shadow: inset 2px 0 0 var(--vx-line-control);
+  box-shadow: none;
 }
 
 .vx-callout--accent {
   background: var(--vx-brand-accent-soft);
-  box-shadow: inset 2px 0 0 var(--vx-brand-accent);
+  box-shadow: none;
 }
 
 .vx-callout--critical {
   background: var(--vx-brand-critical-soft);
-  box-shadow: inset 2px 0 0 var(--vx-brand-critical);
+  box-shadow: none;
 }

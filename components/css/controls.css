@@ -109,23 +109,35 @@
   color: var(--vx-text-tertiary);
 }
 
+/* 分段控件：和筛选胶囊同一层级——36px 高、白底、极细描边、整体胶囊；选中项淡绿底 + 强调色字 */
 .vx-seg {
-  border-radius: var(--vx-radius-md);
-  background: var(--vx-surface-inset);
-  box-shadow: inset 0 0 0 1px var(--vx-line-faint);
-  padding: var(--vx-space-1);
+  height: var(--vx-size-control-md);
+  padding: var(--vx-space-0-5);
+  gap: var(--vx-space-0-5);
+  border-radius: var(--vx-radius-full);
+  background: var(--vx-surface-card);
+  border: 1px solid var(--vx-line-faint);
+  box-shadow: none;
 }
 
 .vx-seg > button {
-  border-radius: var(--vx-radius-sm);
+  height: auto;
+  padding: 0 var(--vx-space-3);
+  border-radius: var(--vx-radius-full);
   font-size: var(--vx-font-size-sm);
+  color: var(--vx-text-secondary);
+}
+
+.vx-seg > button:hover {
+  color: var(--vx-text-primary);
 }
 
 .vx-seg > button[aria-pressed='true'],
 .vx-seg > button[aria-selected='true'] {
-  background: var(--vx-surface-card);
-  color: var(--vx-text-primary);
-  box-shadow: var(--vx-shadow-card);
+  background: var(--vx-brand-accent-soft);
+  color: var(--vx-brand-accent);
+  font-weight: var(--vx-font-weight-medium);
+  box-shadow: none;
 }
 
 .vx-chip {
